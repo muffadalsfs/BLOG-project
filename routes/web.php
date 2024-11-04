@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Blogcontroller ;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\PasswordResetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +21,8 @@ route::get('/',[Blogcontroller::class,'home']);
 //login handle
 Route::view('login','login');
 route::view('register','register');
-route::view('forget','auth.forgetPassword');
-route::post('login',[LoginController::class,'login']);
+
+route::post('login',[LoginController::class,'login'])->name('login');
 route::post('register',[RegisterController::class,'register']);
 route::get('logout',[LoginController::class,'logout']);
 Route::controller(Blogcontroller::class)->group(function(){
@@ -39,10 +38,8 @@ Route::controller(Blogcontroller::class)->group(function(){
 Route::get('detail/{id}', [BlogController::class, 'detail'])->name('blog.detail');
 route::view('blog','blog');
 
-Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
 
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
-
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');

@@ -1,4 +1,4 @@
-/* Style for the body and headings */
+/* Basic styling for the body and headings */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -34,7 +34,8 @@ label {
 }
 
 /* Input and button styling */
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -59,7 +60,7 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Message styling */
+/* Success and error message styling */
 div {
     margin-top: 15px;
     font-size: 14px;

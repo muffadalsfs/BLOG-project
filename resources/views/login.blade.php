@@ -15,5 +15,5 @@
     @enderror
     <button>login</button>
     <a href="register">don't know account </a>
-    <a href="forget">forget password</a>
+    <a href="forgot-password">forget password</a>
 </form>

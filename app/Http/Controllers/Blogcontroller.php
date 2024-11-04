@@ -49,32 +49,30 @@ class Blogcontroller extends Controller
 
     $blog->title = $request->title;
     $blog->content = $request->content;
-
-  
-    if ($request->hasFile('file')) {
-      
-        if ($blog->path) {
-            Storage::delete('public/' . $blog->path);
-        }
-
-      
-        $filePath = $request->file('file')->store('public','public');
-        $blog->path = basename($filePath);
-        $blog->save();
-        return redirect('show');
-    }
-
+ 
     
-    if ($request->has('remove_image') && $request->remove_image == 1) {
+   if ($request->hasFile('file')) 
+   {
+      
         if ($blog->path) {
             Storage::delete('public/' . $blog->path);
-            $blog->path = null;  
         }
+        
+        $filePath = $request->file('file')->store('public','public');
+                $blog->path = basename($filePath);
+                
+            }
+        if ($request->has('remove_image') && $request->remove_image == 1) {
+                if ($blog->path) {
+                    Storage::delete('public/' . $blog->path);
+                    $blog->path = null;  
+                }
+                
+        }
+
         $blog->save();
 
         return redirect('show');
-    }
-
 
     }
     public function detail($id){
