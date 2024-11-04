@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage; // Add this line
 
 class Blogcontroller extends Controller
 {
+    //STORING BLOG
     function add(Request $request){
         $request->validate([
             'title' => 'required|string|max:255',
@@ -29,19 +30,26 @@ class Blogcontroller extends Controller
 
 
     }
+
+    //SHOW BLOG
     function show (Request $request){
         $user=Blog::all();
         return view('show',['blog'=>$user]);
 
     }
+    //DELETE BLOG
+
     function delete($id){
      $user=Blog::destroy($id);
      return redirect('show');
     }
+    //EDIT BLOG
+
     function edit($id){
         $user=Blog::find($id);
         return view('edit',['blog'=>$user]);
     }
+        //UPDATE BLOG
     function update(Request $request,$id){
      
       
@@ -75,10 +83,12 @@ class Blogcontroller extends Controller
         return redirect('show');
 
     }
+    //DETAIL BLOG 
     public function detail($id){
         $detail = Blog::findOrFail($id);
         return view('detail', ['show' => $detail]); 
     }
+    //SHOW CURRENT THREE BLOG IN HOME PAGE
     public function home()
 {
 
