@@ -1,0 +1,156 @@
+/* Container to hold all blog cards */
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts spacing between cards */
+    margin-top: 20px;
+}
+
+/* Each blog card */
+.blog-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px; /* Fixed width for cards */
+    padding: 15px;
+    margin: 10px; /* Spacing between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for the blog image */
+.blog-image {
+    width: 100%; /* Full width of the card */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the space */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Style for the blog actions */
+.blog-actions {
+    margin-top: 10px; /* Spacing above the action links */
+}
+
+/* Style for the action links */
+.blog-actions a {
+    margin-right: 10px; /* Spacing between links */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color */
+}
+
+.blog-actions a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+/* Style for the hello container */
+.hello {
+    display: flex; /* Use flexbox to align items */
+    gap: 10px; /* Space between the links */
+    margin: 20px 0; /* Vertical margin */
+}
+
+/* Style for the links */
+.hello a {
+    padding: 10px 15px; /* Padding for spacing */
+    color: white; /* Text color */
+    background-color: #007bff; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for the links */
+.hello a:hover {
+    background-color: #0056b3; /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+body{
+    background-color: #0056b3;
+}
+.limited-content {
+    overflow: hidden; /* Hide overflow */
+    display: -webkit-box; /* Use flexbox for multi-line truncation */
+    -webkit-box-orient: vertical; /* Set box orientation */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+}
+
+
+
+
+
+
+
+/* Style the container for header links */
+.header-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+    
+}
+
+/* Individual link styling */
+.header-links a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+   
+}
+
+/* Specific styles for Logout link */
+.logout-link {
+    background-color: #d9534f; /* Red */
+    float: right;
+}
+
+/* Specific styles for Add New Blog link */
+.add-blog-link {
+    background-color: #5cb85c; /* Green */
+   
+}
+
+/* Style the main page title */
+.page-title {
+    font-size: 2em;
+    color:rgba(210, 105, 30, 0.897);
+    text-align: center;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 2px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    margin-top: 599px;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 5px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,122 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #c3ecb2, #d9a7c7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Centering and styling the form container */
+.edit-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Page title and form title styling */
+h1, .edit-title {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.edit-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+    margin: 15px 0 5px;
+}
+
+/* Input and textarea styling */
+.input-field,
+.textarea-field,
+.file-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+    box-shadow: 0 0 8px rgba(70, 170, 120, 0.5);
+    outline: none;
+}
+
+.textarea-field {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Image preview styling */
+.current-image {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+}
+
+.current-image-thumbnail {
+    max-width: 100px;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit button styling */
+.submit-button {
+    background: linear-gradient(90deg, #42ba96, #34a866);
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+    background: linear-gradient(90deg, #34a866, #42ba96);
+}
+
+/* Cancel link styling */
+.cancel-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #42ba96;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.cancel-link:hover {
+    color: #2f8b6d;
+}
