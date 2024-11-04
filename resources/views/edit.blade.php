@@ -18,6 +18,9 @@
 
     @if($blog->path)
         <p class="current-image">Current Image: <img src="{{ asset('storage/public/' . $blog->path) }}" alt="Image" class="current-image-thumbnail"></p>
+        <label>
+            <input type="checkbox" name="remove_image" value="1"> Remove current image
+        </label>
     @endif
 
     <button type="submit" class="submit-button">Update Blog</button>

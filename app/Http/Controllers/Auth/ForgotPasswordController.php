@@ -64,9 +64,10 @@ class ForgotPasswordController extends Controller
       public function submitForgetPasswordForm(Request $request)
 
       {
+        dd('error');
         try{
-            User::where('email',$request->email)->first();
-            if(!User){
+            $user=User::where('email',$request->email)->first();
+            if(!$user){
                 return back()->with('error','this email is wrong ');
             }
             $token=Str::radom(40);
@@ -81,14 +82,17 @@ class ForgotPasswordController extends Controller
                     'created_at'=>Carbon::now()
                 ]
             );
+            dd('error');
 
             Mail::send('email.forgetPassword', ['url' => $url], function($message) use($user){
-
+                dd('error');
                       $message->to($user->email);
         
                       $message->subject('Reset Password');
         
                   });
+                
+                  return back()->with('success','sucess');
 
 
 
