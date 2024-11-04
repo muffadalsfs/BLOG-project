@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 class RegisterController extends Controller
 {
-    function register(Request $request){
+    function register(Request $request)
+    {
         $user=new User();
         $user->name=$request->name;
         $user->email=$request->email;

@@ -120,3 +120,55 @@ label {
 .cancel-link:hover {
     color: #2f8b6d;
 }
+/* Style for the current image container */
+.current-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Remove button in the top right corner */
+.remove-image-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+/* Styling for hidden elements */
+#fileInput {
+    display: none;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.current-image-thumbnail {
+    width: 100px;
+    height: auto;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #fff;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+.upload-option {
+    margin-top: 10px;
+}

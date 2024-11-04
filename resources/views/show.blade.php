@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="{{ url('logout') }}">Logout</a></li>
                 <li><a href="{{ url('blog') }}">ADD NEW</a></li>
-                <li><a href="{{ url('/') }}">GO HOME PAGE</a></li>
+               
             </ul>
         </nav>
     </header>
