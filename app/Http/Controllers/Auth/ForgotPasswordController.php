@@ -66,7 +66,7 @@ class ForgotPasswordController extends Controller
       {
         try{
             User::where('email',$request->email)->first();
-            if(!user){
+            if(!User){
                 return back()->with('error','this email is wrong ');
             }
             $token=Str::radom(40);
