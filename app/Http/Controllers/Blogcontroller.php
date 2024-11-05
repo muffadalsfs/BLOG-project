@@ -11,11 +11,11 @@ class Blogcontroller extends Controller
 {
     //STORING BLOG
     function add(Request $request){
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string|max:2555',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', 
-        ]);
+                $request->validate([
+                    'title' => 'required|string|max:255',
+                    'content' => 'required|string|max:2555',
+                    'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', 
+                ]);
         
         $path=$request->file('file')->store('public','public');
         $imagarray=explode('/',$path);
@@ -51,36 +51,34 @@ class Blogcontroller extends Controller
                 //UPDATE BLOG
       function update(Request $request,$id)
        {
-        $request->validate([
-                   
-                    
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', 
-        ]);
-                $blog = Blog::findOrFail($id);
-                
-          
-            $blog->title = $request->title;
-            $blog->content = $request->content;
-            if ($request->hasFile('file')) 
-            {
-            if ($blog->path) 
-                {
-                    Storage::delete('public/' . $blog->path);
-                }
-                $filePath = $request->file('file')->store('public','public');
-                        $blog->path = basename($filePath);
-                        }
-                        elseif ($request->hasFile('file')) {
-                            // Handle file upload
-                            if ($blog->path) {
-                                Storage::delete('public/' . $blog->path); // Delete old image if exists
-                            }
-                            $filePath = $request->file('file')->store('public', 'public');
-                            $blog->path = basename($filePath); // Save the new image path
-                        }
+   
+        $blog = Blog::findOrFail($id);
 
-                        $blog->save();
-                        return redirect('show');
+        // Update the title and content
+        $blog->title = $request->input('title');
+        $blog->content = $request->input('content');
+        
+        // Check if the user wants to remove the current image
+        if ($request->filled('remove_image') && $request->remove_image == 1) {
+            if ($blog->path) {
+                Storage::delete('public/' . $blog->path); // Delete the old image
+                $blog->path = null; // Clear the path in the database
+            }
+        }
+        
+        // If a new file is uploaded, store it
+        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+            if ($blog->path) {
+                Storage::delete('public/' . $blog->path); // Delete the old image
+            }
+            $filePath = $request->file('file')->store('public', 'public');
+            $blog->path = basename($filePath); // Save new image path
+        }
+        
+        // Save the updated blog post
+        $blog->save();
+        
+        return redirect('show');
                 }
 
                 //DETAIL BLOG 
@@ -99,10 +97,4 @@ class Blogcontroller extends Controller
             }
       
                    
-                              
-           
-    
- 
-          
-  
 }

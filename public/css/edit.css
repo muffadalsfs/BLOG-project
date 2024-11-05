@@ -172,3 +172,36 @@ label {
 .upload-option {
     margin-top: 10px;
 }
+.image-container {
+    position: relative; /* Allow absolute positioning of the cancel button */
+    display: inline-block; /* Ensures the image and button are treated as one block */
+}
+
+.current-image-wrapper {
+    position: relative; /* Positioning context for the cancel button */
+}
+
+.current-image-thumbnail {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+}
+
+.remove-image-btn {
+    position: absolute; /* Position the button absolutely within the current image wrapper */
+    top: 5px; /* Adjust top position */
+    right: 5px; /* Adjust right position */
+    background-color: rgba(255, 0, 0, 0.8); /* Red background with slight transparency */
+    color: white; /* White text color */
+    border: none; /* Remove default button border */
+    border-radius: 50%; /* Make the button circular */
+    width: 30px; /* Button width */
+    height: 30px; /* Button height */
+    font-size: 20px; /* Font size for the "X" */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
+}
+
+.remove-image-btn:hover {
+    background-color: rgba(255, 0, 0, 1); /* Darken the button on hover */
+}

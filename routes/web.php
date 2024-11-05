@@ -17,26 +17,25 @@ use App\Http\Controllers\Auth\PasswordResetController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-route::get('/',[Blogcontroller::class,'home']);
+Route::get('/',[Blogcontroller::class,'home']);
 //login handle
 Route::view('login','login');
-route::view('register','register');
-
-route::post('login',[LoginController::class,'login'])->name('login');
-route::post('register',[RegisterController::class,'register']);
-route::get('logout',[LoginController::class,'logout']);
+Route::view('register','register');
+Route::post('login',[LoginController::class,'login'])->name('login');
+Route::post('register',[RegisterController::class,'register']);
+Route::get('logout',[LoginController::class,'logout']);
 Route::controller(Blogcontroller::class)->group(function(){
-    route::middleware('auth')->group(function(){
+    Route::middleware('auth')->group(function(){
     Route::post('form','add');
-    route::get('show','show');
-    route::get('delete/{id}','delete');
-    route::get('edit/{id}','edit');
+    Route::get('show','show');
+    Route::get('delete/{id}','delete');
+    Route::get('edit/{id}','edit');
     Route::put('update/{id}', 'update')->name('blog.update');
     });
 
 });
 Route::get('detail/{id}', [BlogController::class, 'detail'])->name('blog.detail');
-route::view('blog','blog');
+Route::view('blog','blog');
 
 Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');
 Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
