@@ -13,7 +13,7 @@ class Blogcontroller extends Controller
     function add(Request $request){
                 $request->validate([
                     'title' => 'required|string|max:255',
-                    'content' => 'required|string|max:2555',
+                    'content' => 'required|string',
                     'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', 
                 ]);
         
