@@ -44,7 +44,8 @@ class Blogcontroller extends Controller
         return redirect('show');
         }
         //EDIT BLOG
-                function edit($id){
+                function edit($id)
+                {
                     $user=Blog::find($id);
                     return view('edit',['blog'=>$user]);
                 }
@@ -59,7 +60,8 @@ class Blogcontroller extends Controller
         $blog->content = $request->input('content');
         
         // Check if the user wants to remove the current image
-        if ($request->filled('remove_image') && $request->remove_image == 1) {
+        if ($request->filled('remove_image') && $request->remove_image == 1) 
+        {
             if ($blog->path) {
                 Storage::delete('public/' . $blog->path); // Delete the old image
                 $blog->path = null; // Clear the path in the database
@@ -67,7 +69,8 @@ class Blogcontroller extends Controller
         }
         
         // If a new file is uploaded, store it
-        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+        if ($request->hasFile('file') && $request->file('file')->isValid())
+         {
             if ($blog->path) {
                 Storage::delete('public/' . $blog->path); // Delete the old image
             }
