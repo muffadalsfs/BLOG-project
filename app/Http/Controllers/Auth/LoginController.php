@@ -18,7 +18,7 @@ class LoginController extends Controller
             return redirect('show');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'The provideds credentials do not match our records.',
         ])->onlyInput('email');
     }
     
