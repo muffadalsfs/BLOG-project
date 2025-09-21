@@ -13,12 +13,10 @@
     <nav>
         <ul>
             @guest
-                <!-- Show Login and Register only for guests -->
                 <li><a href="{{ url('login') }}">Login</a></li>
                 <li><a href="{{ url('register') }}">Register</a></li>
                 <li><a href="{{ url('show') }}">blog page</a></li>
             @else
-                <!-- Show Logout for authenticated users -->
                 <li><a href="{{ url('show') }}">All Blogs</a></li>
                 <li><a href="{{ url('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

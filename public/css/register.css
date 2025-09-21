@@ -1,4 +1,3 @@
-/* Background styling */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -9,7 +8,6 @@ body {
     margin: 0;
 }
 
-/* Centering the form container */
 div {
     background: rgba(255, 255, 255, 0.85);
     padding: 40px;
@@ -21,13 +19,11 @@ div {
     animation: slideIn 0.8s ease-out;
 }
 
-/* Slide-in animation */
 @keyframes slideIn {
     from { transform: translateY(-30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Title styling */
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -35,7 +31,6 @@ h1 {
     text-align: center;
 }
 
-/* Label styling */
 label {
     display: block;
     text-align: left;
@@ -44,7 +39,6 @@ label {
     color: #555;
 }
 
-/* Input fields with focus effect */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -64,7 +58,6 @@ input[type="password"]:focus {
     outline: none;
 }
 
-/* Styling for register button */
 button {
     background: linear-gradient(90deg, #ff6f61, #ff9478);
     color: white;
@@ -81,7 +74,6 @@ button:hover {
     background: linear-gradient(90deg, #ff9478, #ff6f61);
 }
 
-/* Back link styling with hover effect */
 a {
     color: #ff6f61;
     text-decoration: none;

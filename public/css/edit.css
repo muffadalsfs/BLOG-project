@@ -1,4 +1,3 @@
-/* General body styling */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #c3ecb2, #d9a7c7);
@@ -9,7 +8,6 @@ body {
     margin: 0;
 }
 
-/* Centering and styling the form container */
 .edit-form {
     background: rgba(255, 255, 255, 0.9);
     padding: 30px;
@@ -21,13 +19,11 @@ body {
     animation: fadeIn 0.8s ease-out;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Page title and form title styling */
 h1, .edit-title {
     text-align: center;
     color: #333;
@@ -43,7 +39,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Label styling */
 label {
     display: block;
     text-align: left;
@@ -52,7 +47,6 @@ label {
     margin: 15px 0 5px;
 }
 
-/* Input and textarea styling */
 .input-field,
 .textarea-field,
 .file-input {
@@ -76,7 +70,6 @@ label {
     min-height: 100px;
 }
 
-/* Image preview styling */
 .current-image {
     font-size: 14px;
     color: #777;
@@ -90,7 +83,6 @@ label {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Submit button styling */
 .submit-button {
     background: linear-gradient(90deg, #42ba96, #34a866);
     color: white;
@@ -107,7 +99,6 @@ label {
     background: linear-gradient(90deg, #34a866, #42ba96);
 }
 
-/* Cancel link styling */
 .cancel-link {
     display: inline-block;
     margin-top: 15px;
@@ -120,13 +111,12 @@ label {
 .cancel-link:hover {
     color: #2f8b6d;
 }
-/* Style for the current image container */
+
 .current-image-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* Remove button in the top right corner */
 .remove-image-btn {
     position: absolute;
     top: 5px;
@@ -143,7 +133,6 @@ label {
     text-align: center;
 }
 
-/* Styling for hidden elements */
 #fileInput {
     display: none;
 }
@@ -172,36 +161,37 @@ label {
 .upload-option {
     margin-top: 10px;
 }
+
 .image-container {
-    position: relative; /* Allow absolute positioning of the cancel button */
-    display: inline-block; /* Ensures the image and button are treated as one block */
+    position: relative;
+    display: inline-block;
 }
 
 .current-image-wrapper {
-    position: relative; /* Positioning context for the cancel button */
+    position: relative;
 }
 
 .current-image-thumbnail {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .remove-image-btn {
-    position: absolute; /* Position the button absolutely within the current image wrapper */
-    top: 5px; /* Adjust top position */
-    right: 5px; /* Adjust right position */
-    background-color: rgba(255, 0, 0, 0.8); /* Red background with slight transparency */
-    color: white; /* White text color */
-    border: none; /* Remove default button border */
-    border-radius: 50%; /* Make the button circular */
-    width: 30px; /* Button width */
-    height: 30px; /* Button height */
-    font-size: 20px; /* Font size for the "X" */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s; /* Smooth transition for background color on hover */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .remove-image-btn:hover {
-    background-color: rgba(255, 0, 0, 1); /* Darken the button on hover */
+    background-color: rgba(255, 0, 0, 1);
 }

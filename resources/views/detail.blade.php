@@ -7,7 +7,6 @@
     <title>Blog Detail Page</title>
 </head>
 <body>
-    <!-- Detail Page Content -->
     <div class="detail-container">
         <h1>Detail Page</h1>
         <img src="{{ url('storage/public/' . $show->path) }}" alt="Blog Image" class="blog-image">

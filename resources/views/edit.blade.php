@@ -51,7 +51,6 @@
         const removeImageCheckbox = document.getElementById('removeImageCheckbox');
         const fileInput = document.getElementById('fileInput');
 
-        // If image is marked for removal and no new file is selected, prevent submission
         if (removeImageCheckbox.checked && fileInput.files.length === 0) {
             alert("Please upload a new image or cancel the removal of the current image.");
             return false;

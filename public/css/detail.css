@@ -1,4 +1,3 @@
-/* General body styling */
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #f5f7fa, #d7e1ec);
@@ -9,7 +8,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Container for the detail page */
 .detail-container {
     background-color: white;
     border-radius: 8px;
@@ -19,36 +17,31 @@ body {
     text-align: center;
 }
 
-/* Title styling */
 .detail-container h1 {
     font-size: 32px;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Blog image styling */
 .blog-image {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto; 
     border-radius: 6px;
     margin-bottom: 20px;
 }
 
-/* Title for the blog */
 .detail-container h2 {
     font-size: 24px;
     color: #555;
     margin-bottom: 10px;
 }
 
-/* Content header styling */
 .detail-container h3 {
     font-size: 20px;
     color: #666;
     margin-top: 20px;
 }
 
-/* Content paragraph styling */
 .detail-container p {
     font-size: 16px;
     color: #444;
@@ -56,7 +49,6 @@ body {
     margin: 15px 0;
 }
 
-/* Button styling */
 .cancel-button {
     display: inline-block;
     margin-top: 20px;

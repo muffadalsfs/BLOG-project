@@ -1,13 +1,21 @@
 /* home.css */
-body{
-    background-color: aqua;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* Header styles */
+
+body {
+    background-color: aqua;
+    overflow-x: hidden;
+}
+
 header {
     background-color: #333;
     color: white;
     padding: 20px;
     text-align: center;
+    
 }
 
 header nav ul {
@@ -25,7 +33,6 @@ header nav ul li a {
     text-decoration: none;
 }
 
-/* Blog container styles */
 .blog-container {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +57,6 @@ header nav ul li a {
     border-radius: 8px;
 }
 
-/* Footer styles */
 footer {
     text-align: center;
     padding: 28px;
@@ -60,10 +66,10 @@ footer {
     margin-top: 499px;
 }
 .limited-content {
-    overflow: hidden; /* Hide overflow */
-    display: -webkit-box; /* Use flexbox for multi-line truncation */
-    -webkit-box-orient: vertical; /* Set box orientation */
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 h2{
     text-align: center;
